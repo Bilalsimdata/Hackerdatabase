@@ -3,166 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Haters di Behan da</title>
+  <title>HATERS DI BEHAN DA</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(90deg, #141e30, #243b55);
-      background-size: 400% 400%;
-      animation: backgroundAnimate 8s infinite;
       margin: 0;
       padding: 0;
+      background: #000;
+      font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      min-height: 100vh;
+      height: 100vh;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    @keyframes backgroundAnimate {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    .box {
+      background: #111;
+      border: 2px solid red;
+      box-shadow: 0 0 25px red;
+      padding: 30px 20px;
       border-radius: 15px;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
-      padding: 25px;
       width: 100%;
       max-width: 400px;
       text-align: center;
-      color: white;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    h1 {
-      font-size: 32px;
+    .box h2 {
+      color: red;
+      font-size: 24px;
       margin-bottom: 20px;
-      text-shadow: 0 0 10px rgba(255,255,255,0.8);
     }
 
-    input[type="text"] {
-      width: 80%;
+    .box input {
+      width: 100%;
       padding: 12px;
-      border: 2px solid #fff;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
+      font-size: 16px;
+      background: #333;
       color: white;
+      box-shadow: inset 0 0 5px red;
+    }
+
+    .box button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
       margin: 10px 0;
       font-size: 16px;
-    }
-
-    button {
-      background: rgba(255, 0, 0, 0.8);
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 10px;
-      width: 50%;
-      animation: buttonGlow 2s infinite alternate;
-    }
-
-    @keyframes buttonGlow {
-      0% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
-      100% { box-shadow: 0 0 20px rgba(255, 0, 0, 1); }
-    }
-
-    .result {
-      margin-top: 20px;
-      background: rgba(0,0,0,0.7);
-      padding: 20px;
-      border-radius: 15px;
-      font-size: 14px;
-      text-align: left;
-      white-space: pre-line;
-      display: none;
-    }
-
-    .share-btn {
-      margin-top: 10px;
-      background: linear-gradient(90deg, #25D366, #128C7E);
-      box-shadow: 0 0 10px #25D366;
-      color: white;
-      display: none;
-    }
-
-    .footer {
-      margin-top: 50px;
-      padding: 20px;
-      text-align: center;
-      background: #111;
-      box-shadow: 0 -5px 20px #0ff;
-      width: 100%;
-    }
-
-    .footer h2 {
-      font-size: 1.5rem;
-      color: #0ff;
-      text-shadow: 0 0 10px #0ff;
-      margin-bottom: 10px;
-    }
-
-    .social-links a {
-      display: inline-block;
-      margin: 5px;
-      padding: 10px 15px;
-      color: #fff;
-      background: #0ff;
-      border-radius: 8px;
-      text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 0 15px #0ff;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(90deg, #c00000, #ff0000);
+      box-shadow: 0 0 15px red;
+      transition: 0.3s;
     }
 
-    .social-links a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px #0ff;
-      background: #08f;
+    .box button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #ff0000, #c00000);
     }
 
-    .developer {
-      margin-top: 15px;
-      font-size: 0.9rem;
-      color: yellow;
+    .whatsapp-btn {
+      background: linear-gradient(90deg, #25D366, #128C7E);
+      box-shadow: 0 0 15px #25D366;
+      color: white;
     }
 
-    .developer span {
-      display: block;
-      font-size: 1.8rem;
-      font-family: 'Pacifico', cursive;
-      color: red;
-      text-shadow: 0 0 10px red, 0 0 20px red;
-      margin-top: 5px;
+    #responseBox {
+      color: white;
+      margin-top: 20px;
+      font-size: 16px;
+      display: none;
+      animation: fadeIn 1s ease-in-out;
+      background: #222;
+      border: 1px solid #444;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>HATERS Di BEHAN Da</h1>
-    <input type="text" id="number" placeholder="Enter mobile number" required />
-    <button onclick="fetchData()">Search</button>
-    <div id="responseBox" class="result"></div>
-    <button id="shareButton" class="share-btn" onclick="shareWhatsApp()">📲 Share on WhatsApp</button>
-  </div>
+  <div class="box">
+    <h2> BILAL, SIM DETAL</h2>
+    <input type="text" id="number" placeholder="Enter phone number" required />
+    <button onclick="fetchData()"> Get Details</button>
 
-  <div class="footer">
-    <h2>Join Our Channels</h2>
-    <div class="social-links">
-      <a href="https://t.me/Bi33lal" target="_blank">Telegram</a>
-      <a href="https://chat.whatsapp.com/LhGhpnBGZnhDh1IaGPPFWT" target="_blank">WhatsApp Channel</a>
-      <a href="https://wa.me/923247871095" target="_blank">WhatsApp Me</a>
-    </div>
-    <div class="developer">
-      DEVELOPER:
-      <span>BILAL HACKER</span>
-    </div>
+    <div id="responseBox"></div>
+
+    <button id="shareButton" class="whatsapp-btn" onclick="shareWhatsApp()" style="display: none;"> Share on WhatsApp</button>
+    <button id="channelButton" class="whatsapp-btn" onclick="window.open('https://chat.whatsapp.com/LhGhpnBGZnhDh1IaGPPFWT?mode=ac_t ', '_blank')"> Join WhatsApp Channel</button>
   </div>
 
   <script>
@@ -172,11 +111,11 @@
       const shareButton = document.getElementById("shareButton");
 
       if (!number) {
-        alert("Please enter a phone number.");
+        alert("BILAL enter a phone number.");
         return;
       }
 
-      const url = `https://api.allorigins.win/get?url=${encodeURIComponent(`https://fam-official.serv00.net/sim/api.php?num=${number}`)}`;
+      const url = https://pakdatabase.site/api/search.php?username=Kami&password=123456&search_term=
 
       try {
         const res = await fetch(url);
@@ -185,23 +124,23 @@
 
         if (apiData.status === "success" && Array.isArray(apiData.data) && apiData.data.length > 0) {
           const user = apiData.data[0];
-          const content = `
-📞 Mobile: ${user.Mobile || "Not found"}
-👤 Name: ${user.Name || "Not found"}
-🆔 CNIC: ${user.CNIC || "Not found"}
-📍 Address: ${user.Address || "Not found"}
-📶 Operator: ${user.Operator || "Not found"}
-          `;
+          const content = 
+ÃƒÂ°Ã…Â¸Ã¢Â€ÂœÃ…Â¾ Mobile: ${user.Mobile || "Not found"}
+ÃƒÂ°Ã…Â¸Ã¢Â€Â˜Ã‚Â¤ Name: ${user.Name || "Not found"}
+ÃƒÂ°Ã…Â¸Ã¢Â€Â Ã¢Â€Â CNIC: ${user.CNIC || "Not found"}
+ÃƒÂ°Ã…Â¸Ã¢Â€ÂœÃ‚Â Address: ${user.Address || "Not found"}
+ÃƒÂ°Ã…Â¸Ã¢Â€ÂœÃ‚Â¶ Operator: ${user.Operator || "Not found"}
+          ;
           responseBox.innerText = content;
           responseBox.style.display = "block";
           shareButton.style.display = "inline-block";
         } else {
-          responseBox.innerHTML = `<p style="color: yellow;">Data Not Found</p>`;
+          responseBox.innerHTML = <p style="color: yellow; font-size: 18px; font-weight: bold;">Data Not Found</p>;
           responseBox.style.display = "block";
           shareButton.style.display = "none";
         }
       } catch (e) {
-        responseBox.innerHTML = `<p style="color: red;">Error fetching data.</p>`;
+        responseBox.innerHTML = <p style="color: red; font-size: 18px; font-weight: bold;">Error fetching data. Please try again later.</p>;
         responseBox.style.display = "block";
         shareButton.style.display = "none";
       }
@@ -210,9 +149,13 @@
     function shareWhatsApp() {
       const responseBox = document.getElementById("responseBox");
       const text = encodeURIComponent(responseBox.innerText);
-      const url = `https://wa.me/?text=${text}`;
+      const url = https://wa.me/?text=${text};
       window.open(url, '_blank');
     }
   </script>
+
+  <!-- Footer Script -->
+  <script src=""></script>
 </body>
-  </html>
+</html>
+        
